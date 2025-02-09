@@ -1,40 +1,35 @@
 import React, { useState } from "react";
-
+import data from "./data";
 export default function Education() {
-  const [hover, setHover] = useState(false)
+  const [hover, setHover] = useState(false);
 
-  const handleMouseEnter = ()=>{
-    setHover(true)
-  }
-  const handleMouseLeave = ()=>{
-    setHover(false)
-  }
+  const handleMouseEnter = () => {
+    setHover(true);
+  };
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
+  console.log(data);
+
   return (
-    <div className="edu-container">
-      <div className="card card-1" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <h3>Grade 10</h3>
-        {
-          hover && <p className= "hover">
-          Namuna English Secondary School
-        </p>
-        }
-      </div>
-      <div className="card card-2" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <h3>Grade 12</h3>
-        {
-          hover && <p className= "hover">
-          Milestone International College
-        </p>
-        }
-      </div>
-      <div className="card card-3" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <h3>Bachelor</h3>
-        {
-          hover && <p className= "hover">
-          Shikshyalaya College
-        </p>
-        }
-      </div>
+    <div>
+      {data && data.length > 0 ? (
+        <div className="edu-container">
+          {data.map((dataItem) => (
+            <div
+              key={dataItem.id}
+              className="card card-1"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <h3>{dataItem.grade}</h3>
+              {hover && <p className="hover">{dataItem.org}</p>}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>No data</p>
+      )}
     </div>
   );
 }
