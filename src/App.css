@@ -7,6 +7,7 @@
 }
 body {
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 .container {
   width: 100%;
@@ -20,8 +21,9 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: auto;
+  z-index: 1;
 }
 .navbar ul {
   display: flex;
@@ -63,7 +65,7 @@ body {
   z-index: -1;
 }
 .home:hover::before {
-  filter: blur(5px) grayscale(0);
+  filter: blur(0px) grayscale(0);
 }
 .red {
   background-color: red;
@@ -75,10 +77,11 @@ body {
 
 .about {
   height: 100%;
-  width: 100%;
+  width: 100vw;
   background-color: #686868;
   color: #fff;
   font-size: 1.5rem;
+  overflow-y: scroll;
 }
 .about h1,
 h3 {
@@ -148,6 +151,67 @@ h3 {
   align-items: center;
   height: 100vh;
   width: 100vw;
+  background-color: #121212;
+}
+.edu-container::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(216, 115, 0);
+  height: 50%;
+  width: 25%;
+  border-radius: 50%;
+  filter: blur(100px);
+  right: -10px;
+  bottom: -10%;
+  z-index: 0;
+  animation: float 5s linear infinite;
+}
+@keyframes float {
+  0% {
+    right: -500px;
+  }
+  25% {
+    right: 500px;
+  }
+  50% {
+    right: 1000px;
+  }
+  75% {
+    right: 2100px;
+  }
+  100% {
+    right: 2200%;
+  }
+}
+.edu-container::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(0, 191, 216);
+  height: 50%;
+  width: 25%;
+  border-radius: 50%;
+  filter: blur(100px);
+  left: -10px;
+  top: -10%;
+  z-index: 0;
+  animation: float-2 3s linear infinite;
+}
+@keyframes float-2 {
+  0% {
+    left: -500px;
+  }
+  25% {
+    left: 500px;
+  }
+  50% {
+    left: 1000px;
+  }
+  75% {
+    left: 2100px;
+  }
+  100% {
+    left: 2200%;
+  }
 }
 .card {
   border: 1px solid black;
@@ -161,8 +225,12 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
-.hover{
+.card:hover {
+  transform: scale(1.1px);
+}
+.hover {
   display: block;
   text-align: center;
 }
