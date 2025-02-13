@@ -1,6 +1,24 @@
-.grid-container{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
+* {
+  border: 1px solid black;
+}
+.pro-body {
+  overflow: scroll;
+}
+.grid-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+}
+.grid-container .card {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card img {
+  height: auto;
+  width: 100%;
 }
