@@ -1,0 +1,43 @@
+.contact {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.letter {
+  width: 80vw;
+  display: flex;
+}
+.letter form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 60%;
+  padding: 1rem;
+}
+.letter form label,
+input {
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+}
+.contact-img {
+  background-image: url("https://di2ponv0v5otw.cloudfront.net/posts/2018/06/30/5b377ce7f63eea9cb5d45815/m_5b377cf8a5d7c6c284fc644b.jpg");
+  width: 40%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.submit-btn {
+  font-size: 1.3rem;
+  width: 50%;
+  padding: 0.2rem;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* input animation */
+.letter label{
+    position: absolute;
+}

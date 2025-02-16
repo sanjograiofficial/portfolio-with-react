@@ -5,7 +5,6 @@ import "./project.css";
 export default function Projects() {
   return (
     <div className="pro-body">
-      <h1>Projects</h1>
       <div className="grid-container">
         {project && project.length > 0
           ? project.map((item) => (
