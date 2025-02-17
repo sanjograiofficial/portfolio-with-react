@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import data from "./education";
+import './edu.css'
 export default function Education() {
   const [hover, setHover] = useState(null);
 
