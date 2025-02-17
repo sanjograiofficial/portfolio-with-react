@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import data from "./education";
-import './edu.css'
+import "./edu.css";
 export default function Education() {
   const [hover, setHover] = useState(null);
 
@@ -18,17 +18,19 @@ export default function Education() {
           {data.map((dataItem) => (
             <div
               key={dataItem.id}
-              className={`card card-${dataItem.id}`}
+              className="card-wrap"
               onMouseEnter={() => handleMouseEnter(dataItem.id)}
               onMouseLeave={handleMouseLeave}
             >
-              <h3>{dataItem.grade}</h3>
-              {hover === dataItem.id ? (
-                <div className="hover">
-                  <p>{dataItem.org}</p> <p>Board: {dataItem.board}</p>{" "}
-                  <p>Grade: {dataItem.Grade}</p>
-                </div>
-              ) : null}
+              <div className={`card card-${dataItem.id}`}>
+                <h3>{dataItem.grade}</h3>
+                {hover === dataItem.id ? (
+                  <div className="hover">
+                    <p>{dataItem.org}</p> <p>Board: {dataItem.board}</p>{" "}
+                    <p>Grade: {dataItem.Grade}</p>
+                  </div>
+                ) : null}
+              </div>
             </div>
           ))}
         </div>
