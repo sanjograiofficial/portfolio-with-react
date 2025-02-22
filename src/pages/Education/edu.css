@@ -1,0 +1,53 @@
+.edu-body {
+  height: 100%;
+  width: 100vw;
+  background-color: #121212;
+}
+.edu-container::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(216, 115, 0);
+  height: 50%;
+  width: 25%;
+  border-radius: 50%;
+  filter: blur(100px);
+  right: -10px;
+  bottom: -10%;
+  animation: float 5s linear infinite;
+}
+@keyframes float {
+  0% {
+    right: -500px;
+  }
+  100% {
+    right: 2200px;
+  }
+}
+.edu-container::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(0, 191, 216);
+  height: 50%;
+  width: 25%;
+  border-radius: 50%;
+  filter: blur(100px);
+  left: -10px;
+  top: 20%;
+  animation: float-2 3s linear infinite;
+}
+@keyframes float-2 {
+  0% {
+    left: -500px;
+  }
+  100% {
+    left: 2200px;
+  }
+}
+.edu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  background-color: #121212;
+}
