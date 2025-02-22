@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./contacts.css";
 export default function Contact() {
   const [name, setName] = useState("");
